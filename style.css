@@ -18,11 +18,13 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     padding: 28px;
+    flex: 1;
 }
 
 .image {
     height: 100vh;
     width: 40vw;
+    flex: 1;
 }
 
 #plant {
@@ -33,11 +35,12 @@ body {
 
 #special {
     padding-top: 22px;
-    padding-bottom: 32px;
+    padding-bottom: 22px;
 }
 
 p {
     font-size: 20px;
+    margin-bottom: 18px;
 }
 
 .input-field {
@@ -51,10 +54,15 @@ form {
     justify-content: flex-start;
     flex-direction: column;
     flex-wrap: wrap;
+    box-shadow: 0 0 10px #96989e;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 40px;
 }
 
 label {
-    margin-bottom: 1em;
+    font-size: 14px;
+    margin-bottom: 8px;
     text-transform: uppercase;
 }
 
@@ -69,13 +77,47 @@ input {
 
 input:focus {
     border: 2px solid rgb(13, 121, 223);
-    box-shadow: 0 0 10px #4a4b4e;
+    box-shadow: 0 0 10px #96989e;
     outline: none;
 }
 
-#names, #contact, #password {
+#names, #contact, #password, #button {
     display: flex;
     gap: 16px;
+    justify-content: flex-start;
+    align-items: center;
 }
 
+button {
+    font-weight: 600;
+    background-color: #596D48;
+    font-size: 16px;
+    color: white;
+    border: none;
+    padding: 10px 32px;
+    border-radius: 8px;
+}
 
+button:hover {
+    background-color: #7c9764;
+}
+
+button:active {
+    background-color: #92b376;
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+input[type="password"]:invalid + #message::after {
+    display: block;
+    color: red;
+    content: '* Password must include 1 number, uppercase and lowercase letter, and 8 or more characters.';
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+input[type="password"]:invalid {
+    margin-bottom: 4px;
+}

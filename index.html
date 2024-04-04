@@ -18,15 +18,15 @@
                 <p id="special">You <em>know</em> you want to.</p>
             </div>
             <form action="#" method="get">
-                
+                <p>Let's do this!</p>
                 <div id="names">
                     <div class="input-field">
                         <label for="name">Name: </label>
-                        <input type="text" id="name" name="name">
+                        <input type="text" id="name" name="name" pattern="^[a-zA-Z]*$">
                     </div>
                     <div class="input-field">
                         <label for="last-name">Last name: </label>
-                        <input type="text" id="last-name" name="last-name">
+                        <input type="text" id="last-name" name="last-name" pattern="^[a-zA-Z]*$">
                     </div>
                 </div>
 
@@ -37,21 +37,25 @@
                     </div>
                     <div class="input-field">
                         <label for="tel">Phone number: </label>
-                        <input type="tel" id="tel" name="tel">
+                        <input type="tel" id="tel" name="tel" pattern="^\d{10}$|^\d{3}[. \-]\d{3}[. \-]\d{4}$" title="Please enter a valid phone number.">
                     </div>
                 </div>
 
                 <div id="password">
                     <div class="input-field">
                         <label for="password">Password: </label>
-                        <input type="password" id="password" name="password">
+                        <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        <span id="message"></span>
                     </div>
                     <div class="input-field">
                         <label for="confirm-password">Confirm password: </label>
                         <input type="password" id="confirm-password" name="confirm-password">
                     </div>
                 </div>
-
+                <div id="button">
+                    <button type="submit">Sign up</button>
+                    <span>Already have an account? <a href="#">Login in</a></span>
+                </div>
             </form>
         </div>
     </div>
